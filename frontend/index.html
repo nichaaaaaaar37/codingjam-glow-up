@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Next Vibe</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <!-- SCREEN 1: Input -->
+        <section id="screen-input" class="screen active">
+            <h1 class="hero-header">Find Your Next Vibe</h1>
+            
+            <div class="upload-area" id="upload-area">
+                <input type="file" id="image-input" accept="image/*" hidden>
+                <label for="image-input" class="upload-label">
+                    <span id="upload-text">📸 Upload Selfie</span>
+                </label>
+                <div id="preview-container" class="hidden">
+                    <img id="image-preview" src="" alt="Selfie Preview">
+                </div>
+            </div>
+
+            <div class="preset-selector">
+                <div class="preset-card" data-preset="bob">
+                    <div class="preset-icon">✂️</div>
+                    <span>The Bob</span>
+                </div>
+                <div class="preset-card" data-preset="curtain_bangs">
+                    <div class="preset-icon">✨</div>
+                    <span>Curtain Bangs</span>
+                </div>
+                <div class="preset-card" data-preset="pixie">
+                    <div class="preset-icon">⚡</div>
+                    <span>Pixie Cut</span>
+                </div>
+                <div class="preset-card" data-preset="waves">
+                    <div class="preset-icon">🌊</div>
+                    <span>Beach Waves</span>
+                </div>
+            </div>
+
+            <button id="transform-btn" class="action-btn" disabled>Transform Me</button>
+            <div id="loading-state" class="hidden">
+                <div class="spinner">✂️</div>
+                <p>Consulting the AI stylist...</p>
+            </div>
+            <div id="error-toast" class="toast hidden">Oops, we couldn't see your face clearly. Try another selfie!</div>
+        </section>
+
+        <!-- SCREEN 2: Reveal -->
+        <section id="screen-reveal" class="screen hidden">
+            <h2 class="hero-header">Your New Vibe</h2>
+            
+            <div class="comparison-container">
+                <div class="image-box">
+                    <span class="label">Before</span>
+                    <img id="original-img" src="" alt="Original">
+                </div>
+                <div class="image-box">
+                    <span class="label">After</span>
+                    <img id="transformed-img" src="" alt="Transformed">
+                </div>
+            </div>
+
+            <div class="signature-detail">
+                <p id="vibe-rating">Stylist says: "..."</p>
+            </div>
+
+            <button id="reset-btn" class="action-btn secondary">Try Another Style</button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
